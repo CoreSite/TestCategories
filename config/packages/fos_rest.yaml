@@ -24,7 +24,6 @@ fos_rest:
             'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
         messages:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
-        exception_controller: 'fos_rest.exception.controller:showAction'
     allowed_methods_listener: true
     access_denied_listener:
         json: true

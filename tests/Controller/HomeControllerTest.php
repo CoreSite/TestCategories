@@ -17,6 +17,9 @@ class HomeControllerTest extends WebTestCase
         $client->request('GET', '/fr');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
+        $client->request('GET', '/en/test');
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+
         $client->request('GET', '/en');
         $this->assertEquals('text/html; charset=UTF-8', $client->getResponse()->headers->get('Content-Type'));
     }
