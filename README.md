@@ -52,3 +52,9 @@ INSERT INTO `categories` (`id`, `parent_id`, `name`, `locale_id`) VALUES ('1', N
   
 
 ```
+
+## Запуск тестов
+
+``` bash
+bash vendor/bin/simple-phpunit
+```
