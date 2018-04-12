@@ -26,3 +26,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    app.manager.base_manager:
+        class: App\Manager\BaseManager
+        abstract: true
+        calls:
+            - [setEntityManager, ['@doctrine.orm.entity_manager']]
+
+    app.manager.category_manager:
+        class: App\Manager\CategoryManager
+        parent: app.manager.base_manager
+        public: true
+        autowire: true
+        autoconfigure: false
