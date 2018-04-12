@@ -25,5 +25,8 @@ class TreeControllerTest extends WebTestCase
 
         $client->request('GET', '/api/en/tree');
         $this->assertEquals('application/json', $client->getResponse()->headers->get('Content-Type'));
+
+        $client->request('GET', '/api/fr/test');
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
     }
 }
